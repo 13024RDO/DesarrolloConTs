@@ -8,7 +8,7 @@
 ## Instalación
 1. Clona el repo
 2. `npm install`
-3. Crear archivo `.env` basado en `.env.example`
+3. Crear archivo `.env` 
 4. Ejecutar seed para crear admin inicial:
    - `npm run seed`
 5. En desarrollo:

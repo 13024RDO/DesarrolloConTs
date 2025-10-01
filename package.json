@@ -1,15 +1,29 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "formotex-inventory",
+  "version": "1.0.0",
+  "description": "Inventario de equipos - backend en TypeScript",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "seed": "ts-node-dev --transpile-only src/seed/admin.seed.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0"
   },
   "devDependencies": {
-    "typescript": "~5.8.3",
-    "vite": "^7.1.7"
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^9.0.0",
+    "@types/node": "^18.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
   }
 }
