@@ -7,14 +7,13 @@ import { validateRequest } from "../middlewares/validateRequest.middleware";
 
 const router = Router();
 
-
 router.use(authenticate);
 
+/**
  * GET /api/equipment
  * admin -> all ; user -> solo asignados
  */
 router.get("/", controller.list);
-
 
 router.post(
   "/",
@@ -22,17 +21,14 @@ router.post(
   [
     check("serialNumber").notEmpty().withMessage("serialNumber requerido"),
     check("type").notEmpty().withMessage("type requerido"),
-    validateRequest
+    validateRequest,
   ],
   controller.create
 );
 
-
 router.get("/:id", controller.getOne);
 
-
 router.put("/:id", requireRole("user"), controller.update);
-
 
 router.delete("/:id", requireRole("admin"), controller.remove);
 
