@@ -17,7 +17,6 @@ export const list = async (req: Request, res: Response, next: NextFunction) => {
     const user = req.user!;
     let filter = {};
     if (user.role === "user") {
-      // solo equipos a su cargo
       filter = { assignedTo: user.id };
     }
     const list = await equipmentService.listEquipment(filter);
